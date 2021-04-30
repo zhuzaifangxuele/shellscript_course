@@ -1,0 +1,7 @@
+args=$#           # 传入参数的个数
+lastarg=${!args}
+# 这是 $args 的一种间接引用方式
+
+# 也可以使用:       lastarg=${!#}             (感谢 Chris Monson.)
+# 这是 $# 的一种间接引用方式。
+# 注意 lastarg=${!$#} 是无效的。
