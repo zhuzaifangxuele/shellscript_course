@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# 调用脚本时使用至少10个参数，例如
+# ./scriptname 1 2 3 4 5 6 7 8 9 10
+MINPARAMS=10
+
+echo
+
+echo "The name of this script is \"$0\"."
+# 附带 ./ 代表当前目录
+echo "The name of this script is \"`basename $0`\"."
+# 除去路径信息（查看 'basename'）
+
+echo
+
+if [ -n "$1" ]              # 测试变量是否存在
+then
+ echo "Parameter #1 is $1"  # 使用引号转义#
+fi
+
+if [ -n "$2" ]
+then
+ echo "Parameter #2 is $2"
+fi
+
+if [ -n "$3" ]
+then
+ echo "Parameter #3 is $3"
+fi
+
+# ...
+
+if [ -n "${10}" ]  # 大于 $9 的参数必须被放在大括号中
+then
+ echo "Parameter #10 is ${10}"
+fi
+
+echo "-----------------------------------"
+echo "All the command-line parameters are: "$*""
+
+if [ $# -lt "$MINPARAMS" ]
+then
+  echo
+  echo "This script needs at least $MINPARAMS command-line arguments!"
+fi
+
+echo
+
+exit 0
