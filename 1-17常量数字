@@ -1,0 +1,23 @@
+#!/bin/bash
+# numbers.sh: 不同进制数的表示
+
+# 十进制数: 默认
+let "dec = 32"
+echo "decimal number = $dec"             # 32
+# 一切正常。
+
+
+# 八进制数: 带前导'0'的数
+let "oct = 032"
+echo "octal number = $oct"               # 26
+# 结果以 十进制 打印输出了。
+# ------ ------ -----------
+
+
+# 十六进制数: 带前导'0x'或'0X'的数
+let "hex = 0x32"
+echo "hexadecimal number = $hex"         # 50
+
+echo $((0x9abc))                         # 39612
+#     ^^      ^^   双圆括号进行表达式求值
+# 结果以十进制打印输出。
